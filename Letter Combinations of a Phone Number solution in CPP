@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<string> letterCombinations(string digits) {
+        vector<string> result;
+        if (digits.empty()) {
+            return result;
+        }
+        vector<string> mapping = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        result.push_back("");
+        for (int i = 0; i < digits.size(); i++) {
+            vector<string> temp;
+            string chars = mapping[digits[i] - '0'];
+            for (int j = 0; j < chars.size(); j++) {
+                for (int k = 0; k < result.size(); k++) {
+                    temp.push_back(result[k] + chars[j]);
+                }
+            }
+            result = temp;
+        }
+        return result;
+    }
+};
