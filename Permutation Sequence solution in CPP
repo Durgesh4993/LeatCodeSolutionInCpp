@@ -1,0 +1,21 @@
+class Solution {
+public:
+    string getPermutation(int n, int k) {
+        string result;
+        vector<int> nums;
+        int factorial = 1;
+        for (int i = 1; i <= n; i++) {
+            nums.push_back(i);
+            factorial *= i;
+        }
+        k--;
+        for (int i = 0; i < n; i++) {
+            factorial /= n - i;
+            int index = k / factorial;
+            result.push_back(nums[index] + '0');
+            nums.erase(nums.begin() + index);
+            k %= factorial;
+        }
+        return result;
+    }
+};
