@@ -1,0 +1,45 @@
+class Solution {
+    int dirn[8][2] = {{ -1, 0} , { -1, -1}, { -1, 1}, {0, -1}, {0, 1 } , {1, -1}, {1, 0 }, {1, 1 }};
+
+    void dfs(vector<vector<int>>&visited , int cx , int cy , int hi, int hj , int  li , int lj) {
+        if (cx <= hi and cx >= li and cy <= hj and cy >= lj) {
+            if (!visited[cx][cy]) {
+                visited[cx][cy] = 1 ;
+                for (int i = 0 ; i < 8 ; i++) {
+                    int nx =  cx + dirn[i][0];
+                    int ny = cy + dirn[i][1];
+                    dfs(visited , nx , ny , hi , hj , li , lj);
+                }
+            }
+        }
+        return ;
+    }
+public:
+    bool possibleToStamp(vector<vector<int>>& arr, int H, int W) {
+        int n = arr.size();
+        int m = arr[0].size();
+
+        vector<vector<int>>alt(n + 1 , vector<int>(m + 1 , 0)); //prefix
+        vector<vector<int>> visited(n + 1, vector<int>(m + 1 , 0));
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < m; j++)
+                alt[i + 1][j + 1] = arr[i][j] + alt[i][j + 1] + alt[i + 1][j] - alt[i][j];
+        
+        for (int i = H ; i <= n ; i++) {
+            for (int j = W ; j <= m ; j++) {
+                int li = max(0 , i - H), lj = max(0 , j - W) ;
+                int hi = i, hj = j;
+                int cnt  = alt[hi][hj] - alt[hi][lj] - alt[li][hj] + alt[li][lj];
+                if (cnt == 0) // stamp fits
+                    dfs(visited , hi, hj, hi , hj , li + 1 , lj + 1);             
+            }
+        }
+
+        for (int i = 1 ; i <= n ; i++) 
+            for (int j = 1 ; j <= m ; j++) 
+                if (!visited[i][j] and !arr[i-1][j-1]) return false;
+         
+        return true;
+    }
+};
