@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int minSwaps(vector<int>& nums) {
+        int l = 0, s = 0, i = 0, ans = INT_MAX;
+        for(int i : nums) l += i;
+        nums.insert(nums.end(), nums.begin(), nums.end());
+        
+        for(int j=0; j<nums.size(); j++) {
+            s += nums[j];
+            if(j - i + 1 == l) {
+                ans = min(ans, l - s);
+                s -= nums[i++];
+            }
+        }
+        return ans == INT_MAX ? 0 : ans;
+    }
+};
