@@ -1,0 +1,30 @@
+class Solution {
+public:
+    void permutation(vector<int> &v,vector<int> &ds,vector<vector<int>> &ans,int i,int n,map<int,int> &m){
+    if(i==n){
+        ans.push_back(ds);
+        return;
+    }
+    for(int ind=0;ind<n;ind++){
+       if(m[v[ind]]!=0)
+       { ds.push_back(v[ind]);
+        m[v[ind]]--;
+        permutation(v,ds,ans,i+1,n,m);
+        m[v[ind]]++;
+        ds.pop_back();
+        }
+    }
+}
+    vector<vector<int>> permute(vector<int>& nums) {
+        
+        map<int,int> m;
+        vector<int> ds;
+        vector<vector<int>> ans;
+        int n = nums.size();
+        for(int i:nums){
+            m[i]++;
+        }
+        permutation(nums,ds,ans,0,n,m);
+        return ans;
+    }
+};
