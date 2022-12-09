@@ -1,0 +1,87 @@
+class Solution {
+    public List<String> removeInvalidParentheses(String s) {
+        int leftRemove = 0;
+        int rightRemove = 0;
+        int open = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            char cur = s.charAt(i);
+            if (cur == '(') {
+                open++;
+            } else if (cur == ')') {
+                if (open <= 0) {
+                    rightRemove++;
+                } else {
+                    open--;
+                }
+            }
+        }
+        int close = 0;
+        for (int i = s.length() - 1; i >= 0; --i) {
+            char cur = s.charAt(i);
+            if (cur == ')') {
+                close++;
+            } else if (cur == '(') {
+                if (close <= 0) {
+                    leftRemove++;
+                } else {
+                    close--;
+                }
+            }
+        }
+        List<String> rst = new ArrayList<>();
+        dfs(s, 0, leftRemove, rightRemove, new boolean[s.length()], rst);
+        return rst;
+    }
+
+    private void dfs(String s, int start, int leftRemove, int rightRemove, boolean[] removeMap, List<String> rst) {
+        if (start >= s.length()) {
+            if (leftRemove == 0 && rightRemove == 0 && isValid(s, removeMap)) {
+                rst.add(buildString(s, removeMap));
+            }
+            return;
+        }
+        char cur = s.charAt(start);
+        if (cur == '(') {
+            if (leftRemove > 0 && (start == 0 || s.charAt(start - 1) != '(' || removeMap[start - 1])) {
+                removeMap[start] = true;
+                dfs(s, start + 1, leftRemove - 1, rightRemove, removeMap, rst);
+                removeMap[start] = false;
+            }
+        } else if (cur == ')') {
+            if (rightRemove > 0 && (start == 0 || s.charAt(start - 1) != ')' || removeMap[start - 1])) {
+                removeMap[start] = true;
+                dfs(s, start + 1, leftRemove, rightRemove - 1, removeMap, rst);
+                removeMap[start] = false;
+            }
+        }
+        dfs(s, start + 1, leftRemove, rightRemove, removeMap, rst);
+    }
+
+    private boolean isValid(String s, boolean[] removeMap) {
+        int open = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            if (removeMap[i]) {
+                continue;
+            }
+            if (s.charAt(i) == '(') {
+                open++;
+            } else if (s.charAt(i) == ')') {
+                if (open <= 0) {
+                    return false;
+                }
+                open--;
+            }
+        }
+        return open == 0;
+    }
+
+    private String buildString(String s, boolean[] removeMap) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); ++i) {
+            if (!removeMap[i]) {
+                sb.append(s.charAt(i));
+            }
+        }
+        return sb.toString();
+    }
+}
