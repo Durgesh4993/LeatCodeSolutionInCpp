@@ -1,5 +1,6 @@
 class Solution {
 private:
+
     int solve(TreeNode* root,int &ans){
         // base case
         if(root == NULL){
