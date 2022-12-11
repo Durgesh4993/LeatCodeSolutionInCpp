@@ -1,0 +1,31 @@
+class Solution {
+public:
+    string getHint(string s, string g) {
+        map<int,int> sec;
+        map<int,int> gue;
+        int a[10];
+        memset(a,0,sizeof(a));
+        int bull=0,cows=0;
+        for(int i=0;i<s.size();i++){
+            sec[i] = s[i]-'0';
+            gue[i] = g[i]-'0';
+            if(sec[i]==gue[i]){
+                bull++;
+                sec[i]=-1;
+                gue[i]=-1;
+            }
+            else{
+                a[sec[i]]++;
+            }
+        }
+        for(int i=0;i<g.size();i++){
+            if(gue[i]!=-1){
+            if(a[gue[i]]>0){
+                a[gue[i]]--;
+                cows++;
+            }}
+        }
+        string ans = to_string(bull)+"A"+to_string(cows)+"B";
+        return ans;
+    }
+};
