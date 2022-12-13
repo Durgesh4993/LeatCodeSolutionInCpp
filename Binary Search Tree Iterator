@@ -1,5 +1,6 @@
 class BSTIterator {
 public:
+
      stack<TreeNode*> st;
     BSTIterator(TreeNode *root) {
         Lefttree(root);
