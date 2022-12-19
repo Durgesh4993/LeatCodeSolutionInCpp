@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     vector<string> readBinaryWatch(int num) {
     vector<string> rs;
     for (int h = 0; h < 12; h++)
