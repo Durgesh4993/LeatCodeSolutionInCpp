@@ -1,6 +1,7 @@
 class RandomizedSet {
 	// Thanks to Bhalerao-2002
 private:
+
     // array vector
     vector<int> a;
      // Unordered Map does searching, insertion & deletion of element in average O(1) time
