@@ -1,4 +1,5 @@
 class Solution {
+
 public:
     int compareVersion(string version1, string version2) {
         vector<int> v1, v2;
