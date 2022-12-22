@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     int getAns(vector<int>& prices, int n, int ind, int buy, int cap,vector<vector<vector<int>>>& dp ){
         if(ind==n || cap==0) return 0; //base case
         if(dp[ind][buy][cap]!=-1) return dp[ind][buy][cap];
