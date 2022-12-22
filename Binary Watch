@@ -9,4 +9,5 @@ public:
             rs.emplace_back(to_string(h) + (m < 10 ? ":0" : ":") + to_string(m));
     return rs;
 }
+
 };
