@@ -19,6 +19,7 @@ public:
         head->next=tail;
         tail->prev=head;
     }
+    
     void Add(Node* newNode){
         mp[newNode->key]=newNode;
         Node* tmp=head->next;
