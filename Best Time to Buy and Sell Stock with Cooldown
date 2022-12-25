@@ -1,5 +1,6 @@
 class Solution {
 public:
+
         int maxProfit(vector<int>& prices) {
         int buy_max{INT_MIN}, sell_1_max{0}, sell_2_max{0};
         for (const auto& p: prices) {
