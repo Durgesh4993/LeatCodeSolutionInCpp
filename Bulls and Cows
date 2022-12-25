@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     string getHint(string s, string g) {
         map<int,int> sec;
         map<int,int> gue;
