@@ -11,6 +11,7 @@ public:
         if(buy==1){// We can sell the stock
             profit = max(0+getAns(prices,n,ind+1,1,cap,dp),prices[ind] + getAns(prices,n,ind+1,0,cap-1,dp));
         }
+        
         return dp[ind][buy][cap] = profit;
     }
     int maxProfit(int k, vector<int>& prices) {
