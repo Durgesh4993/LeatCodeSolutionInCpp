@@ -6,6 +6,7 @@ public:
         int l = 0;
         int r = s.length()-1;
         
+        
         int cnt_A = 0;
         int cnt_B = 0;
         
