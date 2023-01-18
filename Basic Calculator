@@ -2,7 +2,7 @@ class Solution {
 public:
    int calculate(string s) {
        stack<pair<int,int>> st; // pair(prev_calc_value , sign before next bracket () )
-       
+      
        long long int sum = 0;
        int sign = +1;
        
