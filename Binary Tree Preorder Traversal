@@ -1,5 +1,4 @@
 class Solution {
-
 public:
     vector<int> ans;
     void preorder(TreeNode* root){
