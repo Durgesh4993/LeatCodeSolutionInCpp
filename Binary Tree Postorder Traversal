@@ -6,6 +6,7 @@ public:
         TreeNode* last = NULL;
         while (root || !todo.empty()) {
             if (root) {
+            
                 todo.push(root);
                 root = root -> left;
             } else {
