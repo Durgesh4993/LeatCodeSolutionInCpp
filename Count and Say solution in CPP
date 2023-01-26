@@ -7,6 +7,7 @@ public:
         string prev = countAndSay(n - 1);
         string curr = "";
         int count = 1;
+        
         for (int i = 1; i < prev.size(); i++) {
             if (prev[i] == prev[i - 1]) {
                 count++;
