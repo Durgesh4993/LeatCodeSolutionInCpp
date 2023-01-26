@@ -10,6 +10,7 @@ public:
             if(mp.count(nums[i]))
             {
             
+            
                 // if I have already seen this number, then check for condition abs(i - j) <= k
                 if(abs(i-mp[nums[i]])<=k)
                     return true;
