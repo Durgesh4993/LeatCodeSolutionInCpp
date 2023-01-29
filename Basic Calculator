@@ -18,6 +18,7 @@ public:
                    num = (num * 10) + s[i] - '0';
                    i++;
                }
+               
                i--; // as for loop also increase i , so if we don't decrease i here a sign will be skipped
                sum += (num * sign);
                sign = +1; // reseting sign
