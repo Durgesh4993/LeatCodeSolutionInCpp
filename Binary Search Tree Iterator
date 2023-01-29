@@ -4,6 +4,7 @@ public:
      stack<TreeNode*> st;
     BSTIterator(TreeNode *root) {
         Lefttree(root);
+        
     }
     
     bool hasNext() {
