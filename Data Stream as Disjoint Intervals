@@ -8,6 +8,7 @@ public:
         auto it = _map.lower_bound(value);
         bool merged = false;
         if(it != _map.begin()) {
+        
             auto prev = it;
             --prev;
             if(prev->second + 1 >= value) {
