@@ -1,0 +1,19 @@
+class Solution {
+public:
+        int largest1BorderedSquare(vector<vector<int>>& A) {
+        int m = A.size(), n = A[0].size();
+        vector<vector<int>> left(m, vector<int>(n)), top(m, vector<int>(n));
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                left[i][j] = A[i][j] + (j && A[i][j] ? left[i][j - 1] : 0);
+                top[i][j] = A[i][j] + (i && A[i][j] ? top[i - 1][j] : 0);
+            }
+        }
+        for (int l = min(m, n); l > 0; --l)
+            for (int i = 0; i < m - l + 1; ++i)
+                for (int j = 0; j < n - l + 1; ++j)
+                    if (min({top[i + l - 1][j], top[i + l - 1][j + l - 1], left[i][j + l - 1], left[i + l - 1][j + l - 1]}) >= l)
+                        return l * l;
+        return 0;
+    }
+};
