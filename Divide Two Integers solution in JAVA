@@ -6,6 +6,7 @@ public class Solution {
         if (dividend == 0) {
             return 0;
         }
+        
         if (dividend == Integer.MIN_VALUE && divisor == -1) {
             return Integer.MAX_VALUE;
         }
