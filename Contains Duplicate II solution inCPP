@@ -8,6 +8,7 @@ public:
                 return true;
             }
             map[nums[i]] = i;
+            
         }
         return false;
         
