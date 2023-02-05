@@ -7,6 +7,7 @@ public:
         int profit;
         if(buy==0){// We can buy the stock
             profit = max(0+getAns(prices,n,ind+1,0,cap,dp), -prices[ind] + getAns(prices,n,ind+1,1,cap,dp));
+            
         }
         if(buy==1){// We can sell the stock
             profit = max(0+getAns(prices,n,ind+1,1,cap,dp),prices[ind] + getAns(prices,n,ind+1,0,cap-1,dp));
