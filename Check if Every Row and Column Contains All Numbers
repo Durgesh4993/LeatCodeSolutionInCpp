@@ -18,6 +18,7 @@ public:
                 if(val>=1 && val<=n)
                 {
                     if(row.find(val)!=row.end() || cols[j].find(val)!=cols[j].end())
+                    
                     {
                         //means it's already in the hashmap
                         return false;
