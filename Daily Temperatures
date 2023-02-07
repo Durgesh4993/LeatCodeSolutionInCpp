@@ -7,6 +7,7 @@ public:
             while (s.size() && temps[s.top()] < temps[i] ){
                 result[s.top()] = i-s.top();
                 s.pop();
+                
             }
             s.push(i);
         }
