@@ -3,6 +3,7 @@ public class Solution {
         if (divisor == 0) {
             return Integer.MAX_VALUE;
         }
+        
         if (dividend == 0) {
             return 0;
         }
