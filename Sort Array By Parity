@@ -1,0 +1,17 @@
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        vector<int> vec1;
+        vector<int> vec2;
+        
+        for(auto i:nums){
+            if(i%2==0){
+                vec1.push_back(i);
+            }
+            else{
+                vec2.push_back(i);
+            }
+        }
+        vec1.insert(vec1.end(),vec2.begin(),vec2.end());
+   return vec1; }
+};
