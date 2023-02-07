@@ -6,6 +6,7 @@ public:
         ans.push_back(root->val);
         preorder(root->left);
         preorder(root->right);
+        
     }
     vector<int> preorderTraversal(TreeNode* root) {
         // n l r
