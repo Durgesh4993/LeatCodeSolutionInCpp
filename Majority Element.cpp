@@ -7,6 +7,7 @@ public:
         for(int i:nums){
             mp[i]++;
         }
+        
         for(auto it:mp){
             if(it.second>nums.size()/2){
                 z= it.first;
