@@ -7,6 +7,7 @@ public:
                 return false;
             }
             max_jump = max(max_jump, i + nums[i]);
+            
         }
         return true;
     }
