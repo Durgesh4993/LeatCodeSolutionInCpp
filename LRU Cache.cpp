@@ -7,6 +7,7 @@ public:
         this->val=val;
     }
 };
+
 class LRUCache {
 public:
     int cap;
