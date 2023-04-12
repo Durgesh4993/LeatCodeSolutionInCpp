@@ -6,6 +6,7 @@ class LFUCache {
     unordered_map<int,list<int>::iterator> pos;
 public:
     LFUCache(int capacity) {
+        
         this->capacity = capacity;
         minFreq = 0;
     }
