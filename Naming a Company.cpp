@@ -7,6 +7,7 @@ public:
         for (string s : ideas) 
             arr[s[0] - 'a'].insert(s.substr(1));
         
+        
         for (int i = 0; i < 25; i++) {
             for (int j = i + 1; j < 26; j++) {
                 unordered_set<string> set;
