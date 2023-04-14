@@ -7,6 +7,7 @@ public:
         
         for (string s : ideas) 
             arr[s[0] - 'a'].insert(s.substr(1));
+       
         
         
         for (int i = 0; i < 25; i++) {
