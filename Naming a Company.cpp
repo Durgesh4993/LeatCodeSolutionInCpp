@@ -4,6 +4,7 @@ public:
     long long distinctNames(vector<string>& ideas) {
         long long disName = 0;
         vector<unordered_set<string>> arr(26);
+        
         for (string s : ideas) 
             arr[s[0] - 'a'].insert(s.substr(1));
         
