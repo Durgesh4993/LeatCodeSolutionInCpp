@@ -1,5 +1,6 @@
 class Solution {
 public:
+    
     int numIslands(vector<vector<char>>& grid) {
         int m = grid.size(), n = m ? grid[0].size() : 0, islands = 0, offsets[] = {0, 1, 0, -1, 0};
         for (int i = 0; i < m; i++) {
