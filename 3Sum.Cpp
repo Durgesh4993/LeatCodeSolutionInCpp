@@ -6,8 +6,7 @@ public:
         if (nums.size() < 3) {
         
             return result;
-            
-            
+          
         }
         sort(nums.begin(), nums.end());
         for (int i = 0; i < nums.size() - 2; i++) {
