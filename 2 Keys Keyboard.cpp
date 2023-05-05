@@ -3,7 +3,6 @@ public:
     int solve(int i, int n, int paste){
         if(i==n) return 0;
         if(i>n) return 1e8;
-
         return 1+min(1+solve(2*i,n,i),solve(i+paste,n,paste));
     }
     int minSteps(int n) {
