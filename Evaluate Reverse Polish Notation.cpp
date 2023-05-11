@@ -9,6 +9,7 @@ public:
                 long int e2=s.top();s.pop();
                    if(i=="+")   e1=e2+e1;
                     if(i=="-")  e1=e2-e1;
+                
                     if(i=="*")  e1=e2*e1;
                     if(i=="/")  e1=e2/e1;
                 s.push(e1);
