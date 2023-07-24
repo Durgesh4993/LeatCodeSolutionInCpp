@@ -13,6 +13,7 @@ public:
             sum+=(num%10);
             
             num/=10;
+            
         }
         if(sum<10)
             return sum;
