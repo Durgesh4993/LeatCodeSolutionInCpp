@@ -9,6 +9,7 @@ public:
         while(num)
             
         {
+            
             sum+=(num%10);
             num/=10;
         }
