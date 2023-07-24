@@ -5,6 +5,7 @@ public:
     int addDigits(int num) {
         
       int sum=0;
+        
         while(num)
         {
             sum+=(num%10);
