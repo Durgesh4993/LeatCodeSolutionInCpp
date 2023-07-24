@@ -15,6 +15,7 @@ public:
             num/=10;
             
         }
+        
         if(sum<10)
             return sum;
         else
