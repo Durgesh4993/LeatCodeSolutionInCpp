@@ -28,6 +28,7 @@ public:
             while (j < k) {
 
                 if (nums[i] + nums[j] + nums[k] == 0) {
+
                     result.push_back({nums[i], nums[j], nums[k]});
                     j++;
                     k--;
