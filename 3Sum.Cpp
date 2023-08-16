@@ -6,7 +6,8 @@ public:
 
         vector<vector<int>> result;        
 
-        if (nums.size() < 3) {                 
+        if (nums.size() < 3) {        
+
             return result;
           
         }
