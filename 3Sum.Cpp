@@ -26,6 +26,7 @@ public:
             int k = nums.size() - 1;
 
             while (j < k) {
+
                 if (nums[i] + nums[j] + nums[k] == 0) {
                     result.push_back({nums[i], nums[j], nums[k]});
                     j++;
