@@ -8,6 +8,7 @@ class Solution {
         visited[node]=true ;
         
         for(auto neighbour : adj[node]){
+          
             if(!visited[neighbour]){
                 bool ans = dfsCycle(adj , visited , neighbour , node) ;
                 if(ans){
