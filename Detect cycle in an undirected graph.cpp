@@ -10,6 +10,7 @@ class Solution {
         for(auto neighbour : adj[node]){
           
             if(!visited[neighbour]){
+              
                 bool ans = dfsCycle(adj , visited , neighbour , node) ;
                 if(ans){
                     return true ;
