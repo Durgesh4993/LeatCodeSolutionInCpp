@@ -13,6 +13,7 @@ class Solution {
               
                 bool ans = dfsCycle(adj , visited , neighbour , node) ;
                 if(ans){
+                  
                     return true ;
                 }
             }
