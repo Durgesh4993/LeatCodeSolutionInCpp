@@ -4,6 +4,7 @@ class Solution {
 
     // Function to detect cycle in an undirected graph.
     bool dfsCycle( vector<int> adj[] , vector<bool>&visited ,int node , int parent){
+      
         visited[node]=true ;
         
         for(auto neighbour : adj[node]){
