@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {        
         vector<vector<int>> result;        
-
         if (nums.size() < 3) {        
 
             return result;
