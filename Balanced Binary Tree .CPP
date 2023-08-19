@@ -32,6 +32,7 @@ public:
     }
     
     int getHeight(TreeNode* root) {
+
         if (root == NULL) {
             return 0;
         }
