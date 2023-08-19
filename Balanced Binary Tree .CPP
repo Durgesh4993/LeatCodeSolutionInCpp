@@ -16,6 +16,7 @@ public:
     bool isBalanced(TreeNode* root) {
 
         if (root == NULL) {
+
             return true;
         }
         int left_height = getHeight(root->left);
