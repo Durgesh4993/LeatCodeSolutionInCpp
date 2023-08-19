@@ -23,6 +23,7 @@ public:
         int left_height = getHeight(root->left);
 
         int right_height = getHeight(root->right);
+
         if (abs(left_height - right_height) > 1) {
             return false;
         }
