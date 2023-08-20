@@ -11,7 +11,6 @@
  
 class Solution {
 public:
-
     bool isBalanced(TreeNode* root) {
 
         if (root == NULL) {
