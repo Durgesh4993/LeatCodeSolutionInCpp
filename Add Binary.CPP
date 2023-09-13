@@ -3,6 +3,7 @@ class Solution {
 public:
 
     string addBinary(string a, string b) {
+
         string result = "";
         int s = 0;
         int i = a.size() - 1, j = b.size() - 1;
