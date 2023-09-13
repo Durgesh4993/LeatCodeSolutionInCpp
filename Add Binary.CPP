@@ -5,7 +5,6 @@ public:
     string addBinary(string a, string b) {
 
         string result = "";
-
         int s = 0;
         int i = a.size() - 1, j = b.size() - 1;
         while(i >= 0 || j >= 0 || s == 1)
